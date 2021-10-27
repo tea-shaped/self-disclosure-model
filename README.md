@@ -15,8 +15,10 @@ In addition to the multi-task models, we provide single-task models which perfor
 
 ## Usage
 
-Please refer to the Read Me's in the multi-task and single-task directories for specific usage guidelines.
+Please refer to the README's in the multi-task and single-task directories for specific usage guidelines.
 
 ## Citation
+
+If you use one of our self-disclosure models in your work, please cite the following paper:
 
 TBD
