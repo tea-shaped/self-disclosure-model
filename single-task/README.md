@@ -33,13 +33,27 @@ You should now see a table with a list of your imported data as MySQL tables. In
 
 With DLATK, you can generate features tables for a variety of features easily. Here's an overview of the features we used with the corresponding commands in DLATK. Where applicable, we also linked the DLATK documentation for the respective features. If you want a more in-depth tutorial on feature tables in DLATK, check out [this link](http://dlatk.wwbp.org/tutorials/tut_feat_tables.html).
 
-|Features|DLATK Command                                                                                                                 |Link (where applicable)|
+|Features  |DLATK Command                                                                                                                 |Link (where applicable)|
 |----------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------|
 |nGrams    |```  python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram``` | [Link](http://dlatk.wwbp.org/fwinterface/fwflag_add_ngrams.html)|
 |LDA Topics|```  dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l met_a30_2000_cp --weighted_lexicon``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
 |EmoLex    | ```  dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l NRC_emot_v0_92``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
 |LIWC      |```  dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l LIWC2015``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
-|RoBERTa   |See explanation below; ```dlatkInterface.py -d dla_tutorial -t msgs_xxx -c user_id --add_bert --bert_model roberta-uncased```| [Link](http://dlatk.wwbp.org/tutorials/tut_bert.html)|
+|RoBERTa   |See explanation below; ```dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_bert --bert_model roberta-uncased```| [Link](http://dlatk.wwbp.org/tutorials/tut_bert.html)|
 
 ### RoBERTa Features
 
+The general feature extraction process in DLATK is almost the same as for the other features mentioned above. However, there are two additional steps you need to do.
+
+Firstly, you need to ensure that punkt is installed for NLTK:
+```python -m nltk.downloader punkt```
+
+Secondly, you need to add a MySQL table containing your tokenized sentences with the following command:
+```dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_sent_tokenized```
+
+This will create a table called '<message\_table>\_stoks'. Finally, you can use the command mentioned in the table above to create your feature table for further analysis:
+```dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_bert --bert_model roberta-uncased```
+
+## Applying a Pickle Model
+
+After you've generated your feature tables, you can finally use our single-task models! 
