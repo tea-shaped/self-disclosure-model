@@ -60,7 +60,7 @@ After you've generated your feature tables, you can finally use our single-task 
 
 |Parameter                                    | Explanation                                                                             |
 |---------------------------------------------|-----------------------------------------------------------------------------------------|
-|[/<data_base/>](http://dlatk.wwbp.org/fwinterface/fwflag_d.html)                                 | The database where your MySQL tables are stored                                         |
+|[<data_base>](http://dlatk.wwbp.org/fwinterface/fwflag_d.html)                                 | The database where your MySQL tables are stored                                         |
 |[/<message_table/>](http://dlatk.wwbp.org/fwinterface/fwflag_t.html)                            | The message table where your messages are stored                                        |
 |[/<group_column/>](http://dlatk.wwbp.org/fwinterface/fwflag_c.html)                             | The name of the column that contains your keys                                          |
 |[/<group_frequency_threshhold/>](http://dlatk.wwbp.org/fwinterface/fwflag_group_freq_thresh.html)               | Counts the number of words in each group specified by -c (the group field). If this count is less than the given group frequency threshold then this group is thrown out. The group is otherwise kept.            |
