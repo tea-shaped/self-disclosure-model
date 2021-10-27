@@ -33,6 +33,11 @@ You should now see a table with a list of your imported data as MySQL tables. In
 
 With DLATK, you can generate features tables for a variety of features easily. Here's an overview of the features we used with the corresponding commands in DLATK. Where applicable, we also linked the DLATK documentation for the respective features. If you want a more in-depth tutorial on feature tables in DLATK, check out [this link]().
 
+|Features|DLATK Command                                                                                               |Link (where applicable)|
+|--------|------------------------------------------------------------------------------------------------------------|-----------------------|
+|nGrams  |```bash  python dlatkInterface.py -d username -t tablename -c columnname --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram```
+
+
 ## Generating 1- to 3gram features
 
 The 1- to 3gram features and the combined table have been created by the following commands:
