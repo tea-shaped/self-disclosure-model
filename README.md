@@ -4,10 +4,19 @@ Being able to reliably estimate self-disclosure -- a key component of friendship
 
 This repository contains our self-disclosure models to determine self-disclosure across corpora in text. It is part of our research efforts documented in our paper [add link once published] and contains all models we have used as pickle files. Our best performing models was a linear multi-task model based on Roberta features.
 
-## Multi-task Models
+
+### Multi-task Models
 
 Our *best performing model* was a *linear multi-task model* based on *Roberta features*. It can be found in the subfolder /multitask/linear/roberta. It was trained on four different corpora [add citations]. You can also find our best-performing multi-task model based on LIWC features in /multitask/linear/liwc. Nonlinear multi-task models for both features can be found in /multitask/nonlinear/robert and /multitask/nonlinear/liwc respectively.
 
-## Single-task Models
+### Single-task Models
 
-In addition to the multi-task models, we provide single-task models which performed best for the within-corpora prediction of self-disclosure. They can be used with Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask/. 
+In addition to the multi-task models, we provide single-task models which performed best for the within-corpora prediction of self-disclosure. They can be used with Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask/.
+
+## Usage
+
+Please refer to the Read Me's in the multi-task and single-task directories for specific usage guidelines.
+
+## Citation
+
+TBD
