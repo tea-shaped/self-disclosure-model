@@ -7,11 +7,11 @@ This repository contains our self-disclosure models to determine self-disclosure
 
 ### Multi-task Models
 
-Our *best performing model* was a *linear multi-task model* based on *Roberta features*. It can be found in the subfolder /multitask/linear/roberta. It was trained on four different corpora [add citations]. You can also find our best-performing multi-task model based on LIWC features in /multitask/linear/liwc. Nonlinear multi-task models for both features can be found in /multitask/nonlinear/robert and /multitask/nonlinear/liwc respectively.
+Our *best performing model* was a *linear multi-task model* based on *Roberta features*. It can be found in the subfolder /multitask/linear/multitask_linear_roberta_self-disclosure. It was trained on four different corpora [add citations]. You can also find our best-performing multi-task model based on LIWC features in /multitask/linear/multitask_linear_liwc_self-disclosure. Nonlinear multi-task models for both features can be found in /multitask/nonlinear directory respectively.
 
 ### Single-task Models
 
-In addition to the multi-task models, we provide single-task models which performed best for the within-corpora prediction of self-disclosure. They can be used with Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask/.
+In addition to the multi-task models, we provide single-task models which performed best for the within-corpora prediction of self-disclosure. They can be used with Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask.
 
 ## Usage
 
