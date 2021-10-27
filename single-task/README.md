@@ -31,92 +31,14 @@ You should now see a table with a list of your imported data as MySQL tables. In
 
 ## Generating Feature Tables
 
-With DLATK, you can generate features tables for a variety of features easily. Here's an overview of the features we used with the corresponding commands in DLATK. Where applicable, we also linked the DLATK documentation for the respective features. If you want a more in-depth tutorial on feature tables in DLATK, check out [this link]().
+With DLATK, you can generate features tables for a variety of features easily. Here's an overview of the features we used with the corresponding commands in DLATK. Where applicable, we also linked the DLATK documentation for the respective features. If you want a more in-depth tutorial on feature tables in DLATK, check out [this link](http://dlatk.wwbp.org/tutorials/tut_feat_tables.html).
 
-|Features|DLATK Command                                                                                               |Link (where applicable)|
-|--------|------------------------------------------------------------------------------------------------------------|-----------------------|
-|nGrams  |```bash  python dlatkInterface.py -d username -t tablename -c columnname --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram```
+|Features|DLATK Command                                                                                                                 |Link (where applicable)|
+|----------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------|
+|nGrams    |```  python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram``` | [Link](http://dlatk.wwbp.org/fwinterface/fwflag_add_ngrams.html)|
+|LDA Topics|```  dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l met_a30_2000_cp --weighted_lexicon``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
+|LIWC      |```  dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l LIWC2015``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
+|RoBERTa   |See explanation below; ```dlatkInterface.py -d dla_tutorial -t msgs_xxx -c user_id --add_bert --bert_model roberta-uncased```| [Link](http://dlatk.wwbp.org/tutorials/tut_bert.html)|
 
+### RoBERTa Features
 
-## Generating 1- to 3gram features
-
-The 1- to 3gram features and the combined table have been created by the following commands:
-
-```bash
-python dlatkInterface.py -d username -t tablename -c columnname --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram
-
-python dlatkInterface.py -d username -t tablename -c columnname -f 'feat$1to3gram$tablename$columnname$16to16' --feat_occ_filter --set_p_occ 0 --group_freq_thresh 1
-```
-
-For the medical dataset, the following commands have been used:
-
-```bash
-python dlatkInterface.py -d username -t medical_sd_messages -c message_id --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram
-
-python dlatkInterface.py -d username -t medical_sd_messages -c message_id -f 'feat$1to3gram$medical_sd_messages$message_id$16to16' --feat_occ_filter --set_p_occ 0 --group_freq_thresh 1
-```
-
-## Generating topic features
-
-Based on the 1gram feature table, the following commands create tables that indicate how strongly the LIWC topics were present in the text. Here, we use the LIWC2015 lexica:
-
-```bash
-python dlatkInterface.py -d username -t medical_sd_messages -c message_id --add_lex_table -l LIWC2015 
-```
-
-To view the created feat$cat_LIWC2015$medical_sd_messages$message_id$1gra table, activate the mysql environment again and perform the following command:
-
-```bash
-select * from akreuel.feat$cat_LIWC2015_w$medical_sd_messages$message_id$1gra limit 10;
-```
-
-
-## Generating topic clouds
-
-Because all weights in LIWC are 1, we need to create a feature table that 
-
-The LIWC2015 topic clouds corresponding to the medical dataset can be found in the results folder. They were created using the following command in the activated DLATK environment:
-
-```bash
-dlatkInterface.py -d username -t medical_sd_messages -c message_id \
--f 'feat$cat_LIWC2015_w$medical_sd_messages$message_id$1gra' \
---outcome_table Medical_SD_Labels  --group_freq_thresh 1 \
---outcomes label_cont label_cat --output_name LIWC_output \
---topic_tagcloud --make_topic_wordcloud --topic_lexicon LIWC2015 \
---tagcloud_colorscheme bluered
-```
-
-The topic clouds can be found in the LIWC_output_topic_tagcloud_wordclouds folder in the home directory of the user.
-NOTE: username has to be replaced with the internal user ID again.
-
-## Performing 10-Fold Cross Validation
-
-Again, the DLATK environment has to be activated before the following command is typed to generate the 10-Folg Cross-Validation. In this example, both the continuous and categorical labels were used. The respective results were reported individually in the Results folder.
-
-```bash
-python dlatkInterface.py -d akreuel -t medical_sd_messages -c message_id \
--f 'feat$cat_LIWC2015_w$medical_sd_messages$message_id$1gra' 'feat$1gram$medical_sd_messages$message_id$16to16' \
---outcome_table Medical_SD_Labels  --group_freq_thresh 1 \
---outcomes label_cont label_cat --output_name medical_sd_output  \
---combo_test_reg --model ridgecv --folds 10
-```
-
-NOTE: username has to be replaced with the internal user ID again.
-
-## Saving the Model to get Across Dataset Results
-
-To save the corresponding model, we need to use pickle:
-
-```bash
-./dlatkInterface.py -d akreuel -t kraut_messages -c message_id --group_freq_thresh 1 -f 'feat$cat_LIWC2015$kraut_messages$message_id$1gra' 'feat$1to3gram$kraut_messages$message_id$16to16' --outcome_table kraut_labels --outcomes emodispos emodisneg --train_regression --model ridge1000 --save_model --picklefile ~/sd.LIWC.1to3grams.16to16ridge1000.gft1.pickle
-```
-
-This should result in the following message (this is also the path where your model is saved!):
-
-```bash
-[TRAINING COMPLETE]
-
-[Saving /home/akreuel/sd.LIWC.1to3grams.16to16ridge1000.gft1.pickle]
-```
-
-## Applying the Model to get Across Dataset Results
