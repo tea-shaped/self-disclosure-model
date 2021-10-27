@@ -11,7 +11,7 @@ Our *best performing model* was a *linear multi-task model* based on *Roberta fe
 
 ### Single-task Models
 
-In addition to the multi-task models, we provide single-task models which performed best for the within-corpora prediction of self-disclosure. They can be used with Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask.
+In addition to the multi-task models, we provide single-task models which performed best for the across-corpora prediction of self-disclosure based on a variety of features such as Ngrams, EmoLex, LIWC and RoBERTa features. The respective models can be found in /singletask.
 
 ## Usage
 
