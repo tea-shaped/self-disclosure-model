@@ -72,5 +72,5 @@ After you've generated your feature tables, you can finally use our single-task 
 
 For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle).
 
-```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile /~/<single-task-model_matching_feature_table>.pickle```
+```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \~/<single-task-model_matching_feature_table>.pickle```
 
