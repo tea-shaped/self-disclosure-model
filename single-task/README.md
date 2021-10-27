@@ -68,7 +68,7 @@ After you've generated your feature tables, you can finally use our single-task 
 |[/<outcome_table/>](http://dlatk.wwbp.org/fwinterface/fwflag_outcome_table.html)                            | Table containing the values for the outcomes.                                           |
 |[/<output_column/>](http://dlatk.wwbp.org/fwinterface/fwflag_outcomes.html)                            | Name of the column where the labels are in your labels table                                         |
 |[/<table_name_prediction_results/>](http://dlatk.wwbp.org/fwinterface/fwflag_predict_regression_to_feats.html)            | Puts predicted results in the MySQL table specified here                                         |
-|/<single-task-model_matching_feature_table/> | The .pickle model you want to use. It has to match the feature table you're using in /<feature_table/>.                                     |
+|/<single-task-model_matching_feature_table/> | The .pickle model you want to use. It has to match the feature table you're using in <feature_table>.                                     |
 
 For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle).
 
