@@ -56,10 +56,14 @@ This will create a table called '<message\_table>\_stoks'. Finally, you can use 
 
 ## Applying a Pickle Model
 
-After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the command below:
-```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> \
---outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \
+After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the command below.
+
+|Parameter    | Explanation  |
+|-------------|--------------|
+|<database>   |              |
+
+For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle).
+
+```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile
 ~/<single-task-model_matching_feature_table>.pickle```
 
-
-For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle). 
