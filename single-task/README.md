@@ -56,11 +56,19 @@ This will create a table called '<message\_table>\_stoks'. Finally, you can use 
 
 ## Applying a Pickle Model
 
-After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the command below.
+After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the command below (explanations adapted from the DLATK documentation).
 
-|Parameter    | Explanation  |
-|-------------|--------------|
-|<database>   |              |
+|Parameter                                    | Explanation                                                                             |
+|---------------------------------------------|-----------------------------------------------------------------------------------------|
+|[/<database/>](http://dlatk.wwbp.org/fwinterface/fwflag_d.html)                                 | The database where your MySQL tables are stored                                         |
+|[/<message_table/>](http://dlatk.wwbp.org/fwinterface/fwflag_t.html)                            | The message table where your messages are stored                                        |
+|[/<group_column/>](http://dlatk.wwbp.org/fwinterface/fwflag_c.html)                             | The name of the column that contains your keys                                          |
+|[/<group_frequency_threshhold/>](http://dlatk.wwbp.org/fwinterface/fwflag_group_freq_thresh.html)               | Counts the number of words in each group specified by -c (the group field). If this count is less than the given group frequency threshold then this group is thrown out. The group is otherwise kept.            |
+|[/<feature_table/>](http://dlatk.wwbp.org/fwinterface/fwflag_f.html)                            | The name of the feature table in MySQL.                                                 |
+|[/<outcome_table/>](http://dlatk.wwbp.org/fwinterface/fwflag_outcome_table.html)                            | Table containing the values for the outcomes.                                           |
+|[/<output_column/>](http://dlatk.wwbp.org/fwinterface/fwflag_outcomes.html)                            | Name of the column where the labels are in your labels table                                         |
+|[/<table_name_prediction_results/>](http://dlatk.wwbp.org/fwinterface/fwflag_predict_regression_to_feats.html)            | Puts predicted results in the MySQL table specified here                                         |
+|/<single-task-model_matching_feature_table/> | The .pickle model you want to use. It has to match the feature table you're using in /<feature_table/>.                                     |
 
 For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle).
 
