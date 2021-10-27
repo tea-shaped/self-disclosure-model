@@ -27,9 +27,11 @@ show tables;
 describe tablename;
 ```
 
-You should now see a table with a list of your imported data as MySQL tables.
+You should now see a table with a list of your imported data as MySQL tables. In case you need to do some additional data cleaning, you can check out [here](http://dlatk.wwbp.org/tutorials/tut_data_cleaning.html) what DLATK can do for you.
 
-## Generating 
+## Generating Feature Tables
+
+With DLATK, you can generate features tables for a variety of features easily. Here's an overview of the features we used with the corresponding commands in DLATK. Where applicable, we also linked the DLATK documentation for the respective features. If you want a more in-depth tutorial on feature tables in DLATK, check out [this link]().
 
 ## Generating 1- to 3gram features
 
