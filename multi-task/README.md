@@ -2,9 +2,9 @@
 
 We are working on a more detailed ReadMe for our multi-task model. For now, please use 
 
-'''bash
+```python
 import torch
-''''
+```
 
 ## Preparing the dataset
 
