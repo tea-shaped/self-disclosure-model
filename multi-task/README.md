@@ -2,7 +2,7 @@
 
 ## Obtaining Self-disclosure Scores
 
-We are working on a more detailed ReadMe for our multi-task model. For now, to use our best performing model, please use the following code block with your Roberta data: 
+We are working on a more detailed ReadMe for our multi-task model. For now, to use our best performing model to detect self-disclosure across corpora, please use the following code block with your Roberta data: 
 
 ```python
 m = torch.load("self-disclosure-model/multi-task/roberta/self-disclosure_multitask_RoBERTa_bestperforming.p")
