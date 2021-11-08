@@ -56,7 +56,9 @@ This will create a table called '<message\_table>\_stoks'. Finally, you can use 
 
 ## Applying a Pickle Model
 
-After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the command below (explanations adapted from the DLATK documentation).
+After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the following command (explanations adapted from the DLATK documentation).
+
+```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \~/<single-task-model_matching_feature_table>```
 
 |Parameter                                    | Explanation                                                                             |
 |---------------------------------------------|-----------------------------------------------------------------------------------------|
@@ -70,7 +72,6 @@ After you've generated your feature tables, you can finally use our single-task 
 |[<table_name_prediction_results>](http://dlatk.wwbp.org/fwinterface/fwflag_predict_regression_to_feats.html)            | Puts predicted results in the MySQL table specified here                                         |
 |<single-task-model_matching_feature_table> | The .pickle model you want to use. It has to match the feature table you're using in <feature_table>.                                     |
 
-For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle).
 
-```./dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \~/<single-task-model_matching_feature_table>```
 
+For more information, check out the DLATK page [here](http://dlatk.wwbp.org/tutorials/tut_pickle_apply.html?highlight=pickle). 
