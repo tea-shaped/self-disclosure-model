@@ -46,19 +46,27 @@ With DLATK, you can generate features tables for a variety of features easily. H
 The general feature extraction process in DLATK is almost the same as for the other features mentioned above. However, there are two additional steps you need to do.
 
 Firstly, you need to ensure that punkt is installed for NLTK:
-```bash python -m nltk.downloader punkt```
+```bash 
+python -m nltk.downloader punkt
+```
 
 Secondly, you need to add a MySQL table containing your tokenized sentences with the following command:
-```bash python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_sent_tokenized```
+```bash 
+python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_sent_tokenized
+```
 
 This will create a table called '<message\_table>\_stoks'. Finally, you can use the command mentioned in the table above to create your feature table for further analysis:
-```bash python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_bert --bert_model roberta-uncased```
+```bash 
+python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_bert --bert_model roberta-uncased
+```
 
 ## Applying a Pickle Model
 
 After you've generated your feature tables, you can finally use our single-task models (YAY!)! To do so, substitute the relevant parameters in the following command (explanations adapted from the DLATK documentation).
 
-```bash python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \~/<single-task-model_matching_feature_table>```
+```bash 
+python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --group_freq_thresh <group_frequency_threshhold> -f '<feature_table>' --outcome_table <outcome_table> --outcomes <output_column> --predict_regression_to_feat <table_name_prediction_results>  --load --picklefile \~/<single-task-model_matching_feature_table>
+```
 
 |Parameter                                    | Explanation                                                                             |
 |---------------------------------------------|-----------------------------------------------------------------------------------------|
