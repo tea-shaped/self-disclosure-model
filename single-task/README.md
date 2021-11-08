@@ -13,7 +13,7 @@ source activate dlatk
 
 and import your csv's to your MySQL database. Further information on how this is done in the command line or in Python can be found [here](http://dlatk.wwbp.org/tutorials/tut_import_methods.html?highlight=importmethods). You should import your messages and labels in two separate MySQL tables.
 
-To check whether above operations have been successful, activate mysql by typing 
+To check whether the above operations have been successful, activate mysql by typing 
 
 ```bash
 mysql
