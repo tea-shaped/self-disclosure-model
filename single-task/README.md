@@ -1,6 +1,6 @@
 # Usage of Single-task Models
 
-The easiest way to use our single-task models is based on the the [Differential Language Analysis Toolkit (DLATK)](http://dlatk.wwbp.org).
+The easiest way to use our single-task models is based on the [Differential Language Analysis Toolkit (DLATK)](http://dlatk.wwbp.org).
 Please follow the guidelines [here](https://github.com/dlatk/dlatk) to install it in your environment before continuing.
 
 ## Preparing the dataset
