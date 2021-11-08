@@ -7,4 +7,4 @@ m = torch.load("self-disclosure-model/multi-task/roberta/self-disclosure_multita
 m.get_self_dis(roberta_input_features)
 ```
 
-Please replace _roberta/_input/features_ with your corresponding inputs.
+Please replace _roberta\_input\_features_ with your corresponding inputs.
