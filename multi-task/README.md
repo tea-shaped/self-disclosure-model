@@ -2,7 +2,7 @@
 
 ## Obtaining Self-disclosure Scores
 
-We are working on a more detailed ReadMe for our multi-task model. For now, to use our best performing model to detect self-disclosure across corpora, we have provided a pickle file with the final trained model in *self-disclosure-model/multi-task/roberta/self-disclosure_multitask_RoBERTa_bestperforming.p*. For more information on how to load pickle models within PyTorch, please check out this [https://pytorch.org/tutorials/beginner/saving_loading_models.html] documentation.
+We are working on a more detailed ReadMe for our multi-task model. For now, to use our best performing model to detect self-disclosure across corpora, we have provided a pickle file with the final trained model in *self-disclosure-model/multi-task/roberta/self-disclosure_multitask_RoBERTa_bestperforming.p*. For more information on how to load pickle models within PyTorch, please check out this [this](https://pytorch.org/tutorials/beginner/saving_loading_models.html) documentation.
 
 
 Please use the following code block with your Roberta data: 
