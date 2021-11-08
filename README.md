@@ -18,6 +18,10 @@ In addition to the multi-task models, we provide single-task models which perfor
 
 Please refer to the README's in the multi-task and single-task directories for specific usage guidelines.
 
+## Data
+
+Our models were trained using data sets from previous works researching the within-corpora prediction of self-disclosure. They are being linked in the data folder for the reproducability of our model.
+
 ## Citation
 
 If you use one of our self-disclosure models in your work, please cite the following paper:
