@@ -23,3 +23,7 @@ Please refer to the README's in the multi-task and single-task directories for s
 If you use one of our self-disclosure models in your work, please cite the following paper:
 
 TBD
+
+## License
+
+Licensed under a GNU General Public License v3 (GPLv3).
