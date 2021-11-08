@@ -36,7 +36,7 @@ With DLATK, you can generate features tables for a variety of features easily. H
 |Features  |DLATK Command                                                                                                                 |Link (where applicable)|
 |----------|-----------------------------------------------------------------------------------------------------------------------------|-----------------------|
 |nGrams    |```bash  
-python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram``` | [Link](http://dlatk.wwbp.org/fwinterface/fwflag_add_ngrams.html)|
+python dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_ngrams -n 1 2 3 --combine_feat_tables 1to3gram ``` | [Link](http://dlatk.wwbp.org/fwinterface/fwflag_add_ngrams.html)|
 |LDA Topics|```bash  
 pyhton dlatkInterface.py -d <database> -t <message_table> -c <group_column> --add_lex_table -l met_a30_2000_cp --weighted_lexicon``` | [Link (Chapter "Generate Lexicon (topic) Features")](http://dlatk.wwbp.org/tutorials/tut_dla.html)|
 |EmoLex    | ```bash  
